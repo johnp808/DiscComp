@@ -11,7 +11,7 @@ public class DiscordApp {
 	}
 
 	public void launch() {
-		System.out.println("Hello Uzi's World");
+		System.out.println("Uzi's World Up And Running");
 		SwingUtilities.invokeLater(() -> {
 			DiscordGUI gui = new DiscordGUI();
 			gui.setVisible(true);

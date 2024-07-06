@@ -38,6 +38,8 @@ import javax.swing.Timer;
 import javax.swing.border.Border;
 
 public class DiscordGUI extends JFrame {
+    private static final long serialVersionUID = 1L;
+	
 	private Robot robot;
 	private JList<String> entryList;
 	private boolean isStarted = false;
@@ -152,6 +154,8 @@ public class DiscordGUI extends JFrame {
 
 	private JScrollPane setupScrollPane() {
 		JScrollPane scrollPane = new JScrollPane(entryList) {
+			private static final long serialVersionUID = 1L;
+			
 			@Override
 			protected void paintComponent(Graphics g) {
 				super.paintComponent(g);
@@ -214,7 +218,7 @@ public class DiscordGUI extends JFrame {
 		titleBar.setBackground(titleBarColor);
 		titleBar.setPreferredSize(new Dimension(getWidth(), 30));
 
-		JLabel leftPadding = new JLabel("           "); // Adjust the number of spaces for more or less padding
+		JLabel leftPadding = new JLabel("           ");
 		titleBar.add(leftPadding, BorderLayout.EAST);
 		JLabel titleLabel = new JLabel("Uzi's World Discord Companion", SwingConstants.CENTER);
 		titleLabel.setForeground(new Color(255, 255, 255));
@@ -223,7 +227,7 @@ public class DiscordGUI extends JFrame {
 		JButton closeButton = closeButton();
 		titleBar.add(closeButton, BorderLayout.WEST);
 
-		MouseAdapter ma = new MouseAdapter() {
+		MouseAdapter mouseAdapter = new MouseAdapter() {
 			Point initialClick;
 
 			@Override
@@ -242,13 +246,12 @@ public class DiscordGUI extends JFrame {
 			}
 		};
 
-		// Apply the mouse listeners to the titleBar and its components.
-		titleBar.addMouseListener(ma);
-		titleBar.addMouseMotionListener(ma);
-		titleLabel.addMouseListener(ma);
-		titleLabel.addMouseMotionListener(ma);
-		closeButton.addMouseListener(ma);
-		closeButton.addMouseMotionListener(ma);
+		titleBar.addMouseListener(mouseAdapter);
+		titleBar.addMouseMotionListener(mouseAdapter);
+		titleLabel.addMouseListener(mouseAdapter);
+		titleLabel.addMouseMotionListener(mouseAdapter);
+		closeButton.addMouseListener(mouseAdapter);
+		closeButton.addMouseMotionListener(mouseAdapter);
 		return titleBar;
 	}
 
@@ -275,10 +278,10 @@ public class DiscordGUI extends JFrame {
 	private void updateToggleButtonVisualState() {
 		if (isStarted) {
 			toggleButton.setText("Stop </3");
-			toggleButton.setForeground(stopButtonColor); // Change text color to red for Stop
+			toggleButton.setForeground(stopButtonColor);
 		} else {
 			toggleButton.setText("Start <3");
-			toggleButton.setForeground(startButtonColor); // Change text color to green for Start
+			toggleButton.setForeground(startButtonColor);
 		}
 	}
 
@@ -311,7 +314,7 @@ public class DiscordGUI extends JFrame {
 			return;
 		}
 
-		// This ensures the display is updated with the correct entry and countdown
+		// Ensure the display is updated with the correct entry and countdown
 		lastSelectedEntry = selectedEntry;
 		final int randomInterval = timerRandomizer();
 		troubleshootingDisplay.setForeground(Color.YELLOW);
@@ -469,7 +472,7 @@ public class DiscordGUI extends JFrame {
 
 	private int timerRandomizer() {
 		int lowerBound = 10000; // 10 seconds
-		int upperBound = 20000; // 30 seconds
+		int upperBound = 20000; // 20 seconds
 		return lowerBound + (int) (Math.random() * (upperBound - lowerBound));
 	}
 
@@ -516,28 +519,28 @@ public class DiscordGUI extends JFrame {
 	}
 
 	public void switchToDiscord() {
-		String osName = System.getProperty("os.name").toLowerCase();
-		try {
-			if (osName.contains("mac")) {
-				String[] command = { "osascript", "-e", "tell application \"Discord\" to activate" };
-				Runtime.getRuntime().exec(command);
-			} else if (osName.contains("win")) {
-				String command = "powershell.exe $w=(Get-Process -Name Discord).MainWindowHandle;"
-						+ "[Console]::WriteLine($w);" + "Add-Type -\"$using:System.Runtime.InteropServices\";"
-						+ "[DllImport(\"user32.dll\")]$f='public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);';"
-						+ "[DllImport(\"user32.dll\")]$g='public static extern bool SetForegroundWindow(IntPtr hWnd);';"
-						+ "ShowWindow($w, 3); SetForegroundWindow($w);";
-				Runtime.getRuntime().exec(command);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	    String osName = System.getProperty("os.name").toLowerCase();
+	    try {
+	        if (osName.contains("mac")) {
+	            String[] command = { "osascript", "-e", "tell application \"Discord\" to activate" };
+	            new ProcessBuilder(command).start();
+	        } else if (osName.contains("win")) {
+	            String command = "powershell.exe $w=(Get-Process -Name Discord).MainWindowHandle;"
+	                    + "[Console]::WriteLine($w);"
+	                    + "Add-Type -\"$using:System.Runtime.InteropServices\";"
+	                    + "[DllImport(\"user32.dll\")]$f='public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);';"
+	                    + "[DllImport(\"user32.dll\")]$g='public static extern bool SetForegroundWindow(IntPtr hWnd);';"
+	                    + "ShowWindow($w, 3); SetForegroundWindow($w);";
+	            new ProcessBuilder("cmd.exe", "/c", command).start();
+	        }
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 
 	private JButton closeButton() {
 		JButton closeButton = new JButton("🛑");
-		closeButton.setPreferredSize(new Dimension(40, 80)); // Set both width and height to 30 for a square button that
-															//  matches the title bar height
+		closeButton.setPreferredSize(new Dimension(40, 80));
 		closeButton.setOpaque(true);
 		closeButton.setBackground(new Color(91, 109, 174));
 		closeButton.setFocusPainted(false);
@@ -545,7 +548,6 @@ public class DiscordGUI extends JFrame {
 		Border lineBorder = BorderFactory.createLineBorder(Color.BLACK);
 		closeButton.setBorder(BorderFactory.createCompoundBorder(lineBorder, padding));
 
-		// Hover effect
 		closeButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {

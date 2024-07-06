@@ -13,10 +13,8 @@ class MyListCellRenderer extends DefaultListCellRenderer {
     public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
         super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
         String text = value.toString();
-
-        // Ensure the background of each cell is transparent
-        setBackground(new Color(0, 0, 0, 0)); // Transparent background
-        setOpaque(isSelected); // Only make background opaque when item is selected
+        setBackground(new Color(0, 0, 0, 0));
+        setOpaque(isSelected);
 
         if (isSelected) {
             setBackground(list.getSelectionBackground());
@@ -25,12 +23,11 @@ class MyListCellRenderer extends DefaultListCellRenderer {
             setForeground(textColor);
         }
 
-        // Use HTML to style the text color and optionally add a separator.
         String styledText = "<html><body style='color: rgb(" +
                             textColor.getRed() + "," + textColor.getGreen() + "," +
                             textColor.getBlue() + ");'>";
         styledText += text;
-        if (index < list.getModel().getSize() - 1) { // No separator after last item
+        if (index < list.getModel().getSize() - 1) {
             styledText += "<br>---------------------------------------------------------------------------------";
         }
         styledText += "</body></html>";
