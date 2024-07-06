@@ -19,4 +19,3 @@ The UI is straight forward with a text box area to enter your own phrases and a 
 * Thread safety using SwingUtilities.invokeLater to safely update UI elements
 * using java.awt.Robot to simulate user actions
 * implementing javax.swing.Timer to schedule tasks
-* 
