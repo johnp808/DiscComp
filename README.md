@@ -6,9 +6,17 @@ The UI is straight forward with a text box area to enter your own phrases and a 
 
 ## Features
 * Enter your own phrases
-* Select previously added phrases and use the delete key remove them
+* Select previously added phrases and use the delete key to remove them
 * A personal emoji preset for myself as well as a default set of "Preset Phrases" for users.
 * Troubleshooting Display
 
-### Future Features
+## Future Goals
 * Allow users to set the random time interval
+* Multitasking support, currently the bot requires control of the users keyboard and screen to copy and paste the messages.
+
+## What I Learned
+* Basics of Java Swing to help build the GUI, including Jpanel, JFrame, JList, JButton, etc.
+* Thread safety using SwingUtilities.invokeLater to safely update UI elements
+* using java.awt.Robot to simulate user actions
+* implementing javax.swing.Timer to schedule tasks
+* 
