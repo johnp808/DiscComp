@@ -305,89 +305,51 @@ public class DiscordGUI extends JFrame {
 	}
 
 	private void scheduleNextAction() {
-		if (!isStarted || listModel.isEmpty())
-			return;
+	    
+	    if(listModel.size() < 2) {
+	    	  troubleshootingDisplay.setForeground(Color.YELLOW);
+	    	  troubleshootingDisplay.setText("Companion Error: You need more than 1 entry </3");
+	    	return;
+	    }
+	    selectedEntry = selectUniqueRandomEntry();
+	    lastSelectedEntry = selectedEntry;
+	    final int randomInterval = timerRandomizer();
+	    troubleshootingDisplay.setForeground(Color.YELLOW);
+	    troubleshootingDisplay.setText(
+	        "Companion will send: \"" + selectedEntry + "\" in: " + (randomInterval / 1000) + " seconds <3");
 
-		selectedEntry = selectUniqueRandomEntry();
-		if (selectedEntry == null) {
-			sendDefaultMessage();
-			return;
-		}
+	    Timer timer = new Timer(1000, new ActionListener() {
+	        int secondsLeft = randomInterval / 1000;
 
-		// Ensure the display is updated with the correct entry and countdown
-		lastSelectedEntry = selectedEntry;
-		final int randomInterval = timerRandomizer();
-		troubleshootingDisplay.setForeground(Color.YELLOW);
-		troubleshootingDisplay.setText(
-		"Companion will send: \"" + selectedEntry + "\" in: " + (randomInterval / 1000) + " seconds <3");
+	        @Override
+	        public void actionPerformed(ActionEvent e) {
+	            if (!isStarted) {
+	                ((Timer) e.getSource()).stop();
+	                troubleshootingDisplay.setForeground(Color.RED);
+	                troubleshootingDisplay.setText("Companion Error: User ended program </3");
+	                return;
+	            }
 
-		Timer timer = new Timer(1000, new ActionListener() {
-			int secondsLeft = randomInterval / 1000;
+	            if (secondsLeft <= 0) {
+	                ((Timer) e.getSource()).stop();
+	                copyEntryToClipboard(selectedEntry);
+	                troubleshootingDisplay.setForeground(Color.GREEN);
+	                troubleshootingDisplay.setText("Companion Copied: \"" + selectedEntry + "\" to clipboard <3");
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if (!isStarted) {
-					// Stop the timer and update the display panel for program end
-					((Timer) e.getSource()).stop();
-					troubleshootingDisplay.setForeground(Color.RED);
-					troubleshootingDisplay.setText("Companion Error: User ended program </3");
-					return;
-				}
-
-				if (secondsLeft <= 0) {
-					// Stops the timer, performs the action and starts the next action
-					((Timer) e.getSource()).stop();
-					startStopAction();
-				} else {
-					// Continue the countdown and updates display
-					troubleshootingDisplay.setForeground(Color.YELLOW);
-					troubleshootingDisplay.setText(
-					"Companion will send: \"" + selectedEntry + "\" in: " + secondsLeft + " seconds <3");
-					secondsLeft--;
-				}
-			}
-		});
-		timer.setInitialDelay(0);
-		timer.start();
-	}
-
-	private void startStopAction() {
-		if (!isStarted) {
-			troubleshootingDisplay.setForeground(Color.RED);
-			troubleshootingDisplay.setText("Companion Error: Program not started </3");
-			return;
-		}
-
-		// if the list is empty, or no unique entry, send a default message
-		if (listModel.isEmpty() || listModel.getSize() == 1 || lastSelectedEntry == null) {
-			sendDefaultMessage();
-			return;
-		}
-
-		copyEntryToClipboard(lastSelectedEntry);
-		troubleshootingDisplay.setForeground(Color.GREEN);
-		troubleshootingDisplay.setText("Companion Copied: \"" + lastSelectedEntry + "\" to clipboard <3");
-
-		SwingUtilities.invokeLater(() -> {
-			switchToDiscord();
-			pasteEntryToDiscord();
-		});
-	}
-
-	private void sendDefaultMessage() {
-		/*
-		 * NEEDS WORK / Spams GM
-		 */
-//		lastSelectedEntry = "GM";
-//		copyEntryToClipboard("GM");
-//		troubleshootingDisplay.setForeground(Color.RED);
-//		troubleshootingDisplay.setText("Error: Companion Copied Duplicate; Sent Default: \"GM\" to clipboard instead <3");
-//
-//		
-//		SwingUtilities.invokeLater(() -> {
-//			switchToDiscord();
-//			pasteEntryToDiscord();
-//		});
+	                SwingUtilities.invokeLater(() -> {
+	                    switchToDiscord();
+	                    pasteEntryToDiscord();
+	                });
+	            } else {
+	                troubleshootingDisplay.setForeground(Color.YELLOW);
+	                troubleshootingDisplay.setText(
+	                    "Companion will send: \"" + selectedEntry + "\" in: " + secondsLeft + " seconds <3");
+	                secondsLeft--;
+	            }
+	        }
+	    });
+	    timer.setInitialDelay(0); // Start the timer immediately
+	    timer.start();
 	}
 
 	private String selectUniqueRandomEntry() {
@@ -450,7 +412,7 @@ public class DiscordGUI extends JFrame {
 			}).start();
 		} else {
 			troubleshootingDisplay.setForeground(Color.RED);
-			troubleshootingDisplay.setText("Companion is Stopping </3");
+			troubleshootingDisplay.setText("Companion is Stopped </3");
 			if (taskTimer != null) {
 				taskTimer.cancel();
 			}
