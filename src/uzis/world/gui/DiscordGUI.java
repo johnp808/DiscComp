@@ -319,8 +319,8 @@ public class DiscordGUI extends JFrame {
 	        "Companion will send: \"" + selectedEntry + "\" in: " + (randomInterval / 1000) + " seconds <3");
 
 	    Timer timer = new Timer(1000, new ActionListener() {
-	        int secondsLeft = randomInterval / 1000;
-
+	        int timeLeft = randomInterval;
+	        
 	        @Override
 	        public void actionPerformed(ActionEvent e) {
 	            if (!isStarted) {
@@ -330,7 +330,7 @@ public class DiscordGUI extends JFrame {
 	                return;
 	            }
 
-	            if (secondsLeft <= 0) {
+	            if (timeLeft <= 0) {
 	                ((Timer) e.getSource()).stop();
 	                copyEntryToClipboard(selectedEntry);
 	                troubleshootingDisplay.setForeground(Color.GREEN);
@@ -340,11 +340,13 @@ public class DiscordGUI extends JFrame {
 	                    switchToDiscord();
 	                    pasteEntryToDiscord();
 	                });
-	            } else {
-	                troubleshootingDisplay.setForeground(Color.YELLOW);
-	                troubleshootingDisplay.setText(
-	                    "Companion will send: \"" + selectedEntry + "\" in: " + secondsLeft + " seconds <3");
-	                secondsLeft--;
+	            } 
+	            else {
+	            	 int minutes = (timeLeft / 1000) / 60;
+	                 int seconds = (timeLeft / 1000) % 60;
+	                 troubleshootingDisplay.setForeground(Color.YELLOW);
+	                 troubleshootingDisplay.setText(String.format("Companion will send: \"%s\" in: %d:%02d <3", selectedEntry, minutes, seconds));
+	                 timeLeft -= 1000;
 	            }
 	        }
 	    });
@@ -433,8 +435,8 @@ public class DiscordGUI extends JFrame {
 	}
 
 	private int timerRandomizer() {
-		int lowerBound = 10000; // 10 seconds
-		int upperBound = 20000; // 20 seconds
+		int lowerBound = 60000; // 1 minute
+		int upperBound = 180000; // 3 minutes
 		return lowerBound + (int) (Math.random() * (upperBound - lowerBound));
 	}
 
