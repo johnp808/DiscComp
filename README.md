@@ -9,7 +9,7 @@ It takes anywhere between (1) to (3) minutes for the bot to send your message.
 
 I designed this application to gain a better understanding of creating a GUI for a java program as I had never done it before. 
 
-It is at a working state for what I needed it to do, so I also included the application in this latest push to be used on Mac Os.
+It is at a working state for what I need it to do, so I also included the application compiled in a DMG with the latest push to be used on Mac Os.
 
 ## Features
 * Enter your own phrases
