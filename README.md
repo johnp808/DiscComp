@@ -1,4 +1,4 @@
-<h1 align="center"> DisComp <img src="src/resources/DisCompLogo.png" width="40" height="40"> </h1> 
+<h1 align="center"> <img src="src/resources/DisCompLogo.png" width="40" height="40"> DisComp <img src="src/resources/DisCompLogo.png" width="40" height="40"> </h1> 
 
 <h2 align="center"> Description </h2>
 
