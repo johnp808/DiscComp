@@ -11,6 +11,8 @@ I designed this application to gain a better understanding of creating a GUI for
 
 It is at a working state for what I need it to do, so I also included the application compiled in a DMG with the latest push, to be used on Mac Os.
 
+![Example Image](src/resources/example.png)
+
 ## Features
 * Enter your own phrases
 * Select previously added phrases and use the delete key to remove them
