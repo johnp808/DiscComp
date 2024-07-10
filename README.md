@@ -17,16 +17,14 @@ It is at a working state for what I need it to do, so I also included the applic
 * A personal emoji preset (that only works for me) as well as a default set of "Preset Phrases" for users.
 * Troubleshooting Display
 
-<p align="center">
-  <h2>Example</h2>
-</p>
+## Example 
 <p align="center"> 
 	<img src="src/resources/example.png" width="360" height="360"> 
 </p>
 
 ## Goals Checklist
 - [ ] Allow users to set the random time interval
-- [ ] Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages.
+- [ ] Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages
 
 ## What I Learned
 * Basics of Java Swing to help build the GUI, including Jpanel, JFrame, JList, JButton, etc.

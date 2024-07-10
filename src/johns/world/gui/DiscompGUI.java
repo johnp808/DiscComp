@@ -46,7 +46,7 @@ public class DiscompGUI extends JFrame {
 	private java.util.Timer taskTimer;
 	private DefaultListModel<String> listModel;
 	private JTextField textField, troubleshootingDisplay;
-	private JButton loadJohnPresetButton, toggleButton, loadPresetButton;
+	private JButton loadEmojiPresetButton, toggleButton, loadPresetButton;
 	private Color lighterButtonColor = new Color(82, 85, 89);
 	private Color startButtonColor = new Color(52, 231, 24);
 	private Color titleBarColor = new Color(114, 137, 218);
@@ -64,8 +64,12 @@ public class DiscompGUI extends JFrame {
 			"Holding onto my NFTs like they're my babies, lol.", "Solana Meme Season 🔥",
 			"Wish I stacked more Sol at $8 LOL", "Where my hodlers at? 🫡🫡🫡",
 			"Don't forget to stretch today!", "Drink some H2O"},
-			johnsEntries = { ":BRUHBRO", ":sobroll:", ":nolegs_Fire", ":mayo:", ":flushwoah:",
-			":Olympic:", ":gigaJAM:", ":mega_1up:", ":RMC_gotem:", ":penguin~1:", ":nurepep:" };
+			emojiEntries = { "😀", "😇", "😏", "🥹🥹🥹", "🥸", 
+			"✊", "🙌", "🙏", "💖", "🎊", "😭😭😭😭😭", "😭", 
+			"😶‍🌫️", "🤫", "🤡", "💩", "🗣️", "🔊", "💤", "🩷", 
+			"❤️", "🖤", "🎉", "🧼", "💎💎💎", "💰", "🏆", 
+			"🛹", "🍕", "🔥", "🔥🔥🔥", "🫂", "👋", 
+			"🤜💥🤛", "🚀", "💎", "💯"};
 
 	public DiscompGUI() {
 		try {
@@ -165,21 +169,21 @@ public class DiscompGUI extends JFrame {
 		southPanel.setBackground(backgroundColor);
 
 		// Buttons setup
-		loadJohnPresetButton = new JButton("John's 🔥 Emojis");
+		loadEmojiPresetButton = new JButton("Emoji Preset");
 		loadPresetButton = new JButton("Preset Phrases");
 		toggleButton = new JButton("Start");
 
 		loadPresetButton.setActionCommand("loadPreset");
-		loadJohnPresetButton.setActionCommand("loadJohns");
+		loadEmojiPresetButton.setActionCommand("loadEmojis");
 
 		configureButton(loadPresetButton, caretColor, this::loadEntries);
-		configureButton(loadJohnPresetButton, caretColor, this::loadEntries);
+		configureButton(loadEmojiPresetButton, caretColor, this::loadEntries);
 		configureToggleButton();
 
 		// Button panel
 		JPanel buttonPanel = new JPanel(new GridLayout(1, 3, 5, 5));
 		buttonPanel.setBackground(buttonColor); // Match the textField background
-		buttonPanel.add(loadJohnPresetButton);
+		buttonPanel.add(loadEmojiPresetButton);
 		buttonPanel.add(toggleButton);
 		buttonPanel.add(loadPresetButton);
 
@@ -281,11 +285,11 @@ public class DiscompGUI extends JFrame {
 				listModel.addElement(entry);
 			}
 			troubleshootingDisplay.setText("Companion Loaded Preset List UwU <3!");
-		} else if ("loadJohns".equals(actionCommand)) {
-			for (String entry : johnsEntries) {
+		} else if ("loadEmojis".equals(actionCommand)) {
+			for (String entry : emojiEntries) {
 				listModel.addElement(entry);
 			}
-			troubleshootingDisplay.setText("Companion Loaded John's Emojis UwU <3!");
+			troubleshootingDisplay.setText("Companion Loaded Emojis Preset List UwU <3!");
 		}
 		textField.requestFocusInWindow();
 	}
@@ -437,7 +441,7 @@ public class DiscompGUI extends JFrame {
 
 	private void setupFocusManagement() {
 		// Button MouseListeners for immediate window focus
-		loadJohnPresetButton.addMouseListener(new MouseAdapter() {
+		loadEmojiPresetButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				textField.requestFocusInWindow();
