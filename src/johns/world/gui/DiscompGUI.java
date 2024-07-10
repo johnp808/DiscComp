@@ -340,7 +340,7 @@ public class DiscompGUI extends JFrame {
 	            }
 	        }
 	    });
-	    timer.setInitialDelay(0); // Start the timer immediately
+	    timer.setInitialDelay(0);
 	    timer.start();
 	}
 
