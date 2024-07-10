@@ -1,4 +1,4 @@
-# Discord Companion Bot
+# Discord Companion
 
 ## Description:
 A very rudimentary automation bot with UI. Designed to make activity leveling in certain discord channels easier while you are afk.
@@ -11,17 +11,20 @@ I designed this application to gain a better understanding of creating a GUI for
 
 It is at a working state for what I need it to do, so I also included the application compiled in a DMG with the latest push, to be used on Mac Os.
 
-<img src="src/resources/example.png" width="360" height="360">
-
 ## Features
 * Enter your own phrases
 * Select previously added phrases and use the delete key to remove them
 * A personal emoji preset (that only works for me) as well as a default set of "Preset Phrases" for users.
 * Troubleshooting Display
 
-## Future Goals
-* Allow users to set the random time interval
-* Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages.
+## Example 
+<p align="center"> 
+	<img src="src/resources/example.png" width="360" height="360"> 
+</p>
+
+## Goals Checklist
+- [ ] Allow users to set the random time interval
+- [ ] Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages.
 
 ## What I Learned
 * Basics of Java Swing to help build the GUI, including Jpanel, JFrame, JList, JButton, etc.
