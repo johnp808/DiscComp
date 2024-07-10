@@ -1,8 +1,8 @@
-<p align="center" style="font-size:2.5em;"> DisComp <img src="src/resources/DisCompLogo.png" width="40" height="40"> </p>
+<p align="center" style="font-size:50px;"> DisComp <img src="src/resources/DisCompLogo.png" width="40" height="40"> </p> 
 
 ---
 
-<p align="center" style="font-size:2em;"> Description </p>
+<p align="center" style="font-size:35px;"> Description </p>
 
 ---
 
@@ -16,7 +16,7 @@ I designed this application to gain a better understanding of creating a GUI for
 
 It is at a working state for what I need it to do, so I also included the application compiled in a DMG with the latest version to be used on MacOs.
 
-<p align="center" style="font-size:2em;"> Features </p>
+<p align="center" style="font-size:35px;"> Features </p>
 
 ---
 
@@ -25,7 +25,7 @@ It is at a working state for what I need it to do, so I also included the applic
 * A random emoji preset as well as a phrase preset
 * Troubleshooting Display
 
-<p align="center" style="font-size:2em;"> Example </p> 
+<p align="center" style="font-size:35px;"> Example </p> 
 
 ---
 
@@ -35,14 +35,14 @@ It is at a working state for what I need it to do, so I also included the applic
 
 ---
 
-<p align="center" style="font-size:2em;"> Goals Checklist </p> 
+<p align="center" style="font-size:35px;"> Goals Checklist </p> 
 
 1. - [ ] Allow users to set the random time interval
 2. - [ ] Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages
 
 ---
 
-<p align="center" style="font-size:2em;"> What I Learned </p> 
+<p align="center" style="font-size:35px;"> What I Learned </p> 
 
 * Basics of Java Swing to help build the GUI, including Jpanel, JFrame, JList, JButton, etc.
 * Thread safety using SwingUtilities.invokeLater to safely update UI elements
