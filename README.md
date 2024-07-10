@@ -2,10 +2,10 @@
 
 <h2 align="center"> Description </h2>
 
-A combination of Discord and Companion, a very rudimentary automation afk bot. I Designed DisComp to make activity leveling in certain discord channels easier while you are not at your computer. <br>
+A combination of Discord and Companion, a very rudimentary automation bot. I designed DisComp to make activity leveling in certain discord channels easier while not at your computer. <br>
 
-I designed this application to gain a better understanding of creating a GUI for a java program as I had never done it before. <br>
-I also wanted to create something for me and my friends to use for our discord channels. <br>
+This application helped me to gain a better understanding of creating a GUI for a java program as I had never done it before. <br>
+I also wanted to create something for my friends and I to use on our discords. <br>
 
 The UI is straight forward with a text box area to enter your own phrases, a start button, along with a few additional features. <br>
 
@@ -41,4 +41,4 @@ Just drag and drop the DisComp app into the Applications folder after mounting. 
 * Thread safety using SwingUtilities.invokeLater to safely update UI elements
 * implementing javax.swing.Timer to schedule tasks
 * using java.awt.Robot to simulate user actions
-* Convert .jar into a .app, then a custom DMG
+* Convert .jar into a .app, into a custom DMG
