@@ -1,10 +1,6 @@
-<p align="center" style="font-size:50px;"> DisComp <img src="src/resources/DisCompLogo.png" width="40" height="40"> </p> 
+<h1 align="center"> DisComp <img src="src/resources/DisCompLogo.png" width="40" height="40"> </h1> 
 
----
-
-<p align="center" style="font-size:35px;"> Description </p>
-
----
+<h2 align="center"> Description </h2>
 
 A very rudimentary automation bot with UI. Designed to make activity leveling in certain discord channels easier while you are afk.
 
@@ -16,33 +12,27 @@ I designed this application to gain a better understanding of creating a GUI for
 
 It is at a working state for what I need it to do, so I also included the application compiled in a DMG with the latest version to be used on MacOs.
 
-<p align="center" style="font-size:35px;"> Features </p>
+<h2 align="center"> Features </h2>
 
----
 
 * Enter custom phrases
 * Select previously added phrases and use the delete key to remove them
 * A random emoji preset as well as a phrase preset
 * Troubleshooting Display
 
-<p align="center" style="font-size:35px;"> Example </p> 
+<h2 align="center"> Example </h2> 
 
----
 
 <p align="center"> 
 	<img src="src/resources/example.png" width="360" height="360"> 
 </p>
 
----
-
-<p align="center" style="font-size:35px;"> Goals Checklist </p> 
+<h2 align="center"> Goals Checklist </h2> 
 
 1. - [ ] Allow users to set the random time interval
 2. - [ ] Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages
 
----
-
-<p align="center" style="font-size:35px;"> What I Learned </p> 
+<h2 align="center"> What I Learned </h2> 
 
 * Basics of Java Swing to help build the GUI, including Jpanel, JFrame, JList, JButton, etc.
 * Thread safety using SwingUtilities.invokeLater to safely update UI elements
