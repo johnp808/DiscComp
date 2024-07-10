@@ -17,11 +17,10 @@ Just drag and drop into the applications folder after mounting. <br>
 
 <h2 align="center"> Features </h2>
 
-
 * Enter custom phrases
-* Select previously added phrases and use the delete key to remove them
-* A random emoji preset as well as a phrase preset
 * Troubleshooting Display
+* A random emoji preset as well as a phrase preset
+* Select previously added phrases and use the delete key to remove them
 
 <h2 align="center"> Example </h2> 
 
