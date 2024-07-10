@@ -2,15 +2,18 @@
 
 <h2 align="center"> Description </h2>
 
-A very rudimentary automation bot with UI. Designed to make activity leveling in certain discord channels easier while you are afk.
+A very rudimentary automation bot with UI. Designed to make activity leveling in certain discord channels easier while you are afk. <br>
 
-The UI is straight forward with a text box area to enter your own phrases and a start button, with a few additional features.
+The UI is straight forward with a text box area to enter your own phrases and a start button, with a few additional features. <br>
 
-It takes anywhere between (1) to (3) minutes for the bot to send your message. 
+It takes anywhere between (1) to (3) minutes for the bot to send your message. <br>
 
-I designed this application to gain a better understanding of creating a GUI for a java program as I had never done it before. 
+I designed this application to gain a better understanding of creating a GUI for a java program as I had never done it before. <br>
 
-It is at a working state for what I need it to do, so I also included the application compiled in a DMG with the latest version to be used on MacOs.
+It is currently at a working state, so I also included the application compiled into a DMG with the latest version to be used on MacOs. <br>
+Just drag and drop into the applications folder after mounting. <br>
+
+<img src="src/resources/DisCompVolume.png" width="40" height="40"> 
 
 <h2 align="center"> Features </h2>
 
