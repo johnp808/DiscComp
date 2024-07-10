@@ -4,7 +4,7 @@
 
 A combination of Discord and Companion, a very rudimentary automation bot. I designed DisComp to make activity leveling in certain discord channels easier while not at your computer. <br>
 
-This application helped me to gain a better understanding of creating a GUI for a java program as I had never done it before. <br>
+This application helped me to gain a better understanding of creating a GUI for a java program as I had never done it before.
 I also wanted to create something for my friends and I to use on our discords. <br>
 
 The UI is straight forward with a text box area to enter your own phrases, a start button, along with a few additional features. <br>
