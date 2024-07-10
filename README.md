@@ -1,6 +1,6 @@
 # DiscComp
 
-## Description:
+## Description
 A very rudimentary automation bot with UI. Designed to make activity leveling in certain discord channels easier while you are afk.
 
 The UI is straight forward with a text box area to enter your own phrases and a start button, with a few additional features.
