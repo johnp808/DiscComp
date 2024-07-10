@@ -2,14 +2,14 @@
 
 <h2 align="center"> Description </h2>
 
-A combination of Discord and Companion, gives us DisComp. A very rudimentary automation bot with UI. Designed to make activity leveling in certain discord channels easier while you are afk. <br>
+A combination of Discord and Companion, a very rudimentary automation afk bot. I Designed DisComp to make activity leveling in certain discord channels easier while you are not at your computer. <br>
+
+I designed this application to gain a better understanding of creating a GUI for a java program as I had never done it before. <br>
+I also wanted to create something for me and my friends to use for our discord channels. <br>
 
 The UI is straight forward with a text box area to enter your own phrases, a start button, along with a few additional features. <br>
 
-The automated bot takes anywhere between (1) to (3) minutes to send your message. <br>
-
-I designed this application to gain a better understanding of creating a GUI for a java program as I had never done it before. <br>
-I also wanted to create something for me and my friends to use in our discord channels. <br>
+DisComp will select a time between (1) to (3) minutes to send a random message from your list of phrases into the discord channel you are currently active in. <br>
 
 It is currently at a working state, so I also included the application compiled into a DMG with the latest version to be used on MacOs. <br>
 Just drag and drop the DisComp app into the Applications folder after mounting. <br>
@@ -32,8 +32,8 @@ Just drag and drop the DisComp app into the Applications folder after mounting. 
 
 <h2 align="center"> Future Goal Checklist </h2> 
 
-1. - [ ] Allow users to set the random time interval
-2. - [ ] Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages
+1. - [ ] Multitasking support
+2. - [ ] Allow users to set the random time interval
 
 <h2 align="center"> What I Learned </h2> 
 
