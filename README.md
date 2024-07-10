@@ -11,7 +11,7 @@ I designed this application to gain a better understanding of creating a GUI for
 
 It is at a working state for what I need it to do, so I also included the application compiled in a DMG with the latest push, to be used on Mac Os.
 
-![Example Image](src/resources/example.png)
+<img src="src/resources/example.png" width="250" height="250">
 
 ## Features
 * Enter your own phrases
