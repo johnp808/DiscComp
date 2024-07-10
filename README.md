@@ -2,16 +2,17 @@
 
 <h2 align="center"> Description </h2>
 
-A very rudimentary automation bot with UI. Designed to make activity leveling in certain discord channels easier while you are afk. <br>
+A combination of Discord and Companion, gives us DisComp. A very rudimentary automation bot with UI. Designed to make activity leveling in certain discord channels easier while you are afk. <br>
 
-The UI is straight forward with a text box area to enter your own phrases and a start button, with a few additional features. <br>
+The UI is straight forward with a text box area to enter your own phrases, a start button, along with a few additional features. <br>
 
-It takes anywhere between (1) to (3) minutes for the bot to send your message. <br>
+The automated bot takes anywhere between (1) to (3) minutes to send your message. <br>
 
 I designed this application to gain a better understanding of creating a GUI for a java program as I had never done it before. <br>
+I also wanted to create something for me and my friends to use in our discord channels. <br>
 
 It is currently at a working state, so I also included the application compiled into a DMG with the latest version to be used on MacOs. <br>
-Just drag and drop into the applications folder after mounting. <br>
+Just drag and drop the DisComp app into the Applications folder after mounting. <br>
 
 <img src="src/resources/DisCompVolume.png" width="40" height="40"> 
 
@@ -40,3 +41,4 @@ Just drag and drop into the applications folder after mounting. <br>
 * Thread safety using SwingUtilities.invokeLater to safely update UI elements
 * implementing javax.swing.Timer to schedule tasks
 * using java.awt.Robot to simulate user actions
+* Convert .jar into a .app, then a custom DMG
