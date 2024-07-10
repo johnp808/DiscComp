@@ -23,8 +23,8 @@ It is at a working state for what I need it to do, so I also included the applic
 </p>
 
 ## Goals Checklist
-- [ ] Allow users to set the random time interval
-- [ ] Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages
+1. - [ ] Allow users to set the random time interval
+2. - [ ] Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages
 
 ## What I Learned
 * Basics of Java Swing to help build the GUI, including Jpanel, JFrame, JList, JButton, etc.
