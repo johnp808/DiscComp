@@ -1,4 +1,4 @@
-# Discord Companion
+# DiscComp
 
 ## Description:
 A very rudimentary automation bot with UI. Designed to make activity leveling in certain discord channels easier while you are afk.
@@ -14,7 +14,7 @@ It is at a working state for what I need it to do, so I also included the applic
 ## Features
 * Enter your own phrases
 * Select previously added phrases and use the delete key to remove them
-* A personal emoji preset (that only works for me) as well as a default set of "Preset Phrases" for users.
+* A random emoji preset as well as a default set of Phrases for users
 * Troubleshooting Display
 
 ## Example 
