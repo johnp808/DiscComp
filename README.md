@@ -38,5 +38,5 @@ Just drag and drop into the applications folder after mounting. <br>
 
 * Basics of Java Swing to help build the GUI, including Jpanel, JFrame, JList, JButton, etc.
 * Thread safety using SwingUtilities.invokeLater to safely update UI elements
-* using java.awt.Robot to simulate user actions
 * implementing javax.swing.Timer to schedule tasks
+* using java.awt.Robot to simulate user actions
