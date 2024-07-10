@@ -29,7 +29,7 @@ Just drag and drop into the applications folder after mounting. <br>
 	<img src="src/resources/example.png" width="360" height="360"> 
 </p>
 
-<h2 align="center"> Goals Checklist </h2> 
+<h2 align="center"> Future Goal Checklist </h2> 
 
 1. - [ ] Allow users to set the random time interval
 2. - [ ] Multitasking support, currently the bot requires control of the users keyboard to copy and paste the messages
