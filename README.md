@@ -20,7 +20,7 @@ Just drag and drop the DisComp app into the Applications folder after mounting. 
 
 * Enter custom phrases
 * Troubleshooting Display
-* A random emoji preset as well as a phrase preset
+* A emoji preset as well as a phrase preset
 * Select previously added phrases and use the delete key to remove them
 
 <h2 align="center"> Example </h2> 
